@@ -30,10 +30,9 @@ const countOfNeighbours = (board, x, y) => {
 
   let total = 0;
 
-  for (let i = 0; i < neighbors.length; i++) {
-    const nx = x + neighbors[i][0];
-    const ny = y + neighbors[i][1];
-
+  for (const neighbor of neighbors) {
+    const nx = x + neighbor[0];
+    const ny = y + neighbor[1];
     if (nx >= 0 && ny >= 0 && nx < board.length && ny < board[0].length) {
       total += board[nx][ny];
     }
@@ -42,7 +41,7 @@ const countOfNeighbours = (board, x, y) => {
   return total;
 };
 
-const resultingBoard = (board) => {
+const resultingBoard = (board, rows, columns) => {
   const newBoard = [];
   for (let i = 0; i < rows; i++) {
     newBoard[i] = [];
@@ -71,3 +70,5 @@ const y = 3;
 
 const neighborsCount = countOfNeighbours(board, x, y);
 console.log(`vecinos vivos (${x}, ${y}): ${neighborsCount}`);
+const newBoard = resultingBoard(board, rows, columns);
+console.log(newBoard);
