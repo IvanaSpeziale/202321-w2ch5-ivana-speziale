@@ -76,7 +76,6 @@ console.log(newBoard); */
 
   const initializeGame = () => {
     const printCellsTable = (tableToPrint) => console.table(tableToPrint);
-
     let round = 0;
     const finalRoundTimer = 5;
     let currentTable;
